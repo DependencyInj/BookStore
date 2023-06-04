@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @DynamoDBTable(tableName = "BOOKS_INFO_TABLE")
 public class Book {
+
+
     @DynamoDBHashKey(attributeName = "BookId")
     private String bookId;
     @DynamoDBAttribute(attributeName = "BookTitle")
@@ -20,4 +22,32 @@ public class Book {
     private String imageUrl;
     @DynamoDBAttribute(attributeName = "BookPrice")
     private Double bookPrice;
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public Double getBookPrice() {
+        return bookPrice;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setBookPrice(Double bookPrice) {
+        this.bookPrice = bookPrice;
+    }
 }
