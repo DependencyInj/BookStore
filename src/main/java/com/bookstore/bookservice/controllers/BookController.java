@@ -30,4 +30,9 @@ public class BookController implements ErrorController {
     public void saveBook(@RequestBody Book book){
         bookRepository.saveBook(book);
     }
+
+    @PostMapping(value = "/books/deleteAll")
+    public  void deleteAll(){
+        bookRepository.deleteAllBooks();
+    }
 }

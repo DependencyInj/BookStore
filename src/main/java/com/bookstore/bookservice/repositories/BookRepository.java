@@ -22,4 +22,9 @@ public class BookRepository {
         List<Book> books = mapper.scan(Book.class, new DynamoDBScanExpression());
         return books;
     }
+
+    public void deleteAllBooks(){
+        List<Book> books = mapper.scan(Book.class, new DynamoDBScanExpression());
+        mapper.batchDelete(books);
+    }
 }
